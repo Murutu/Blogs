@@ -21,5 +21,14 @@ class Config:
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     
-class     
+class  DevConfig(Config):
+    '''
+    Development configuration child class
+    Args:
+         Config: The parent configuration class with General configuration settings
+    '''
+    SECRET_KEY = 'call'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://peter:ozil@localhost/saka'
+    DEBUG = True
+    ENV = 'development'       
             
