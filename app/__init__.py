@@ -10,7 +10,10 @@ def create_app(config_name):
     app = Flask(__name__)
     
 #Initializing Flask Extensions
-login_manager.init_app(app)    
+login_manager.init_app(app)
+
+# configure UploadSet
+connfigure_uploads(app,photos)  
     
     
 # Registering the blueprint
