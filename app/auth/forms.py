@@ -3,6 +3,7 @@ from wtforms import StringField,PasswordField,SubmitField
 from wtforms.validators import Required,Email,EqualTo
 from ..model import User
 from wtforms import ValidationError
+from wtforms import StringField,PasswordField,BooleanField,SubmitField
 
 
 class RegistrationForm(FlaskForm):
