@@ -16,7 +16,7 @@ login_manager.init_app(app)
 mail.init_app(app)
 
 # configure UploadSet
-connfigure_uploads(app,photos)  
+configure_uploads(app,photos)  
     
     
 # Registering the blueprint
