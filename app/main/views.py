@@ -2,6 +2,7 @@ from flask_login import login_required
 from flask import render_template,request,redirect,url_for,abort
 from .forms import UpdateProfile
 from .. import db,photos
+from
 
 @main.route('/user/<uname>')
 def profile(uname):
