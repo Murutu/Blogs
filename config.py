@@ -30,5 +30,9 @@ class  DevConfig(Config):
     SECRET_KEY = 'call'
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://peter:ozil@localhost/saka'
     DEBUG = True
-    ENV = 'development'       
-            
+    ENV = 'development'
+    
+config_options = {
+    'development':DevConfig,
+    'production':ProdConfig
+}  
