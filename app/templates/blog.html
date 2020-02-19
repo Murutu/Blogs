@@ -16,7 +16,8 @@
                 <p class="posted" >Posted by {{blog.user.username|capitalize}}</p>
                 <a href="/blog/comment/{{blog.id}}">View comments</a>
                 <a href="/blog/{{blog.id}}/delete/" >Delete blog</a>
-              {% endfor %} 
+              {% endfor %}
+            </div> 
 
 
 
@@ -24,3 +25,4 @@
         </div>
     </div>
 </div>
+{% endblock content %}
