@@ -1,6 +1,8 @@
-from flask_login import login_required
+from flask_login import login_required,current_user
+from . import main
 from flask import render_template,request,redirect,url_for,abort
 from .forms import UpdateProfile
+from ..models import User
 from .. import db,photos
 from ..email import mail_message
 

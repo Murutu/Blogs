@@ -1,6 +1,7 @@
 from . import db
 from . import login_manager
 from datetime import datetime
+from werkzeug.security import generate_password_hash,check_password_hash
 
 class User(db.Model):
      __tablename__ = 'users'
@@ -11,6 +12,8 @@ class User(db.Model):
      profile_pic_path = db.Column(db.String)
      pass_secure = db.Column(db.String(255))
      date_joined = db.Column(db.DateTime,default=datetime.utcnow)
+     
+     blogs = db.relationship('Blog',backref = 'user', lazy='dynamic')
 
      def __repr__(self):
          return f'User {self.username}'
