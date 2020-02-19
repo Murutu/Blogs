@@ -4,6 +4,7 @@ from flask import render_template,request,redirect,url_for,abort
 from .forms import UpdateProfile
 from ..models import User
 from .. import db,photos
+from ..request import get_quotes
 from ..email import mail_message
 
 @main.route("/")
