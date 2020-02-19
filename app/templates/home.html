@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
 
   </head>
+  <body>
+    <nav class="nav" style="margin-left: 30%; font-family: 'Caveat', cursive; font-size:30px;">
+      <a class="nav-link active" href="football clubs">Footballclubs</a>
+      <a class="nav-link active" href="poetry">Poetry</a>
+      <a class="nav-link active" href="nostalgia">Nostalgia</a>
+      <a class="nav-link active" href="artists">Artists</a>
+    </nav>
+
  
 <ul class="nav navbar-nav navbar-right">
     {% if current_user.is_authenticated %}
@@ -19,8 +27,7 @@
     {%endif%}
   </ul>
 
+  {% endblock %}
 
-
-
- 
-  </html>  
+</body>
+</html>  
