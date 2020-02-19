@@ -40,8 +40,11 @@ def create_blog():
         create_blog.save_blog()
         
         return redirect(url_for('.index'))
+    
     title = 'create blog'
     return render_template('create_blog.html',title=title,blog_form=blog_form)
+
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
