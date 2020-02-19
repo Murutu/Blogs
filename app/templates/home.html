@@ -29,5 +29,57 @@
 
   {% endblock %}
 
+
+{% block content %}
+
+
+<h1 class="blog" style="font-family: 'Caveat', cursive; font-size:30px; text-align: center; color: rgb(3, 3, 24);">
+  Welcome To Blogs
+</h1>
+
+<div class="container">
+  <a class="blog" style="font-size: 20px; color: rgb(12, 10, 10); padding-left: 40%;" href="{{url_for('main.create_blog')}}">Showcase your own blog</a>
+</div>
+
+<div class="container">
+      <div class="quotes">
+        <div class="well well-lg">
+          <p class="q" style="text-align: center;font-size: 30px; color: rgb(232, 248, 235);">QUOTE</p>
+          <p class="author" style="font-size: 20px;">{{quotes.author}}</p>
+          <p class="quote">{{quotes.quote}}</p>
+        </div>
+      </div>
+      </div>
+    
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <a class="foota" href="/blog/football clubs" style="font-family: 'Caveat', cursive;font-size: 30px; text-align: center; color: rgb(5, 41, 114); ">Football clubs</a><br>
+       
+      </div>
+
+
+  <div class="col-md-6">
+          <a class="foota" href="/blog/poetry" style=" font-family: 'Caveat', cursive;font-size: 30px;  color: rgb(5, 17, 100);">Poetry</a><br>
+       
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+          <a class="nos" href="/blog/nostalgia" style="font-family: 'Caveat', cursive;font-size: 30px;  color: rgb(6, 14, 102);">Nostalgia</a><br>
+       
+      </div>
+  
+      <div class="col-md-6">
+          <a class="fashion" href="/blog/artist" style=" font-family :'Caveat', cursive;font-size: 30px;  color: rgb(9, 14, 102);">artists</a><br>
+       
+      </div>
+    </div>
+  </div>
+  </div>
+      
+  {% endblock content %}
+
 </body>
 </html>  

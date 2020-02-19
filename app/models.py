@@ -61,7 +61,7 @@ class Blog(db.Model):
         
     @classmethod
     def get_blogs(cls,category):
-        blogs-Blog.query.filter_by(category=category).all()
+        blogs=Blog.query.filter_by(category=category).all()
         
         return blogs
     

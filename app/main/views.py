@@ -1,11 +1,13 @@
 from flask_login import login_required,current_user
 from . import main
 from flask import render_template,request,redirect,url_for,abort
-from .forms import UpdateProfile
-from ..models import User
+from .forms import UpdateProfile,BlogForm,CommentForm
+from ..models import User,Blog,Comment
 from .. import db,photos
 from ..request import get_quotes
 from ..email import mail_message
+from app import db
+from app.main import main
 
 @main.route("/")
 def index():
@@ -14,7 +16,7 @@ def index():
     '''
     quotes=get_quotes()
     print(quotes)
-    return render_template('home.html')
+    return render_template('home.html',quotes=quotes)
 
 @main.route('/blog/<category>')
 def blog(category):
