@@ -26,7 +26,7 @@ def blog(category):
     blogs=Blog.get_blogs(category)
     return render_template('blog.html',blogs=blogs)
 
-@main.route('/blog/new', methods = ['GET','POST'])
+@main.route('/blog/new', methods = ['POST', 'GET'])
 @login_required
 def create_blog():
     blog_form = BlogForm()
@@ -36,7 +36,6 @@ def create_blog():
         category = blog_form.category.data
         
         create_blog = Blog(blog_title=title,blog_content=blog,category=category,user=current_user)
-        
         create_blog.save_blog()
         
         return redirect(url_for('.index'))
