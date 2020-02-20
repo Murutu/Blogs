@@ -1,5 +1,8 @@
-{% extends 'base.html' %} {% import 'macros.html' as macro%} {% import
-    "bootstrap/wtf.html" as wtf %} {% block content %}
+{% extends 'bootstrap/base.html' %} 
+{% import 'macros.html' as macro%} 
+{% import "bootstrap/wtf.html" as wtf %} 
+
+{% block content %}
     <div class="container">
       <h4 class="ments" style="text-align: center; font-size: 20px;">Comments</h4>
       <hr />
@@ -13,4 +16,4 @@
       </div>
     </div>
     
-    {% endblock content%}
+{% endblock%}

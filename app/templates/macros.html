@@ -1,15 +1,15 @@
 {% macro displayBlog(blog_list) %}
 
-{% for blog in Blogs_list %}
+    {% for blog in Blogs_list %}
 
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <div class="well wee-lg">
-        <h4 class="blog1" style="text-align: center;">{{blog.blog_title}}</h4>
-        <p>{{blog.blog_content| truncate(500)}}</p>
-        <p>Author:{{blog.user.username}} <a href="/blog/{{blog.id}}" class="btn btn-primary pull-right">Comment</a></p>
-    </div>
-</div>
-{% endfor %}
+        <div class="col-md-3">
+            <div class="well wee-lg">
+                <h4 class="blog1" style="text-align: center;">{{blog.blog_title}}</h4>
+                <p>{{blog.blog_content| truncate(500)}}</p>
+                <p>Author:{{blog.user.username}} <a href="/blog/{{blog.id}}" class="btn btn-primary pull-right">Comment</a></p>
+            </div>
+        </div>
+    {% endfor %}
 {% endmacro %}
 
 {%macro displayComments(comments_list)%}

@@ -1,4 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+
 {% block styles %}
 {{ super ()}}
 
@@ -7,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-1">
+<!-- <div class="container-1">
     <div class="row">
         <div class="col-md-4">
             <div class="well well-lg">
@@ -24,5 +26,10 @@
 
         </div>
     </div>
+</div> -->
+<div class="container">
+    <div class="row">
+       {{macro.displayBlog(blogs)}}
+    </div>
 </div>
-{% endblock content %}
+{% endblock %}

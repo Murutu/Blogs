@@ -1,14 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'bootstrap/base.html' %}
+
 {% block styles %}
 {{ super ()}}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
 
+{% endblock %}
+
+{% block content %}
 <html>
-  <head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
-    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
-
-  </head>
+  
   <body>
     <nav class="nav" style="margin-left: 30%; font-family: 'Caveat', cursive; font-size:30px;">
       <a class="nav-link active" href="#">Footballclubs</a>
@@ -27,11 +29,7 @@
     {%endif%}
   </ul>
 
-  {% endblock %}
-
-
-{% block content %}
-
+ 
 
 <h1 class="blog" style="font-family: 'Caveat', cursive; font-size:30px; text-align: center; color: rgb(3, 3, 24);">
   Welcome To Blogs
@@ -54,7 +52,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <a class="foota" href="/blog/football clubs" style="font-family: 'Caveat', cursive;font-size: 30px; text-align: center; color: rgb(5, 41, 114); ">Football clubs</a><br>
+        <a class="foota" href="{{url_for('main.football')}}" style="font-family: 'Caveat', cursive;font-size: 30px; text-align: center; color: rgb(5, 41, 114); ">Football clubs</a><br>
        
       </div>
 
@@ -78,8 +76,8 @@
     </div>
   </div>
   </div>
-      
-  {% endblock content %}
-
 </body>
-</html>  
+</html>
+  {% endblock %}
+
+  

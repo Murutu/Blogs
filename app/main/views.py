@@ -18,19 +18,20 @@ def index():
     print(quotes)
     return render_template('home.html',quotes=quotes)
 
-@main.route('/blog/<category>')
-def blog(category):
+@main.route('/blog/footballclubs')
+def football():
     '''
     view root page function that returns index and its data
     '''
-    blogs=Blog.get_blogs(category)
+    blogs=Blog.query.filter_by(category='footballclubs').all()
     return render_template('blog.html',blogs=blogs)
 
 @main.route('/blog/new', methods = ['POST', 'GET'])
 @login_required
 def create_blog():
     blog_form = BlogForm()
-    if blog_form.validate_on_submit():
+    if blog_form.validate_on_submit(
+):
         title = blog_form.title.data
         blog = blog_form.content.data
         category = blog_form.category.data
@@ -42,6 +43,7 @@ def create_blog():
     
     title = 'create blog'
     return render_template('create_blog.html',title=title,blog_form=blog_form)
+
 
 
 @main.route('/user/<uname>')
