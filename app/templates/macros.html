@@ -1,12 +1,12 @@
 {% macro displayBlog(blog_list) %}
 
-    {% for blog in Blogs_list %}
+    {% for blog in blog_list %}
 
         <div class="col-md-3">
             <div class="well wee-lg">
-                <h4 class="blog1" style="text-align: center;">{{blog.blog_title}}</h4>
-                <p>{{blog.blog_content| truncate(500)}}</p>
-                <p>Author:{{blog.user.username}} <a href="/blog/{{blog.id}}" class="btn btn-primary pull-right">Comment</a></p>
+                <h4 class="blog1" style="text-align: center;">{{ blog.blog_title }}</h4>
+                <p>{{ blog.blog_content| truncate(500) }}</p>
+                <p>Author:{{ blog.user.username }} <a href="{{url_for('main.comment', id=blog.id)}}" class="btn btn-primar y  pull-right">Comm e nt</a></p>
             </div>
         </div>
     {% endfor %}

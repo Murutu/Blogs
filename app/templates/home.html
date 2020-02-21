@@ -52,25 +52,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <a class="foota" href="{{url_for('main.football')}}" style="font-family: 'Caveat', cursive;font-size: 30px; text-align: center; color: rgb(5, 41, 114); ">Football clubs</a><br>
+        <a class="foota" href="{{ url_for('main.football', category="footballclubs") }}" style="font-family: 'Caveat', cursive;font-size: 30px; text-align: center; color: rgb(5, 41, 114); ">Football clubs</a><br>
        
       </div>
 
 
   <div class="col-md-6">
-          <a class="foota" href="/blog/poetry" style=" font-family: 'Caveat', cursive;font-size: 30px;  color: rgb(5, 17, 100);">Poetry</a><br>
+          <a class="foota" href="{{ url_for('main.football', category="poetry") }}" style=" font-family: 'Caveat', cursive;font-size: 30px;  color: rgb(5, 17, 100);">Poetry</a><br>
        
       </div>
     </div>
   
     <div class="row">
       <div class="col-md-6">
-          <a class="nos" href="/blog/nostalgia" style="font-family: 'Caveat', cursive;font-size: 30px;  color: rgb(6, 14, 102);">Nostalgia</a><br>
+          <a class="nos" href="{{ url_for('main.football', category="nostalgia") }}" style="font-family: 'Caveat', cursive;font-size: 30px;  color: rgb(6, 14, 102);">Nostalgia</a><br>
        
       </div>
   
       <div class="col-md-6">
-          <a class="fashion" href="/blog/artist" style=" font-family :'Caveat', cursive;font-size: 30px;  color: rgb(9, 14, 102);">Artists</a><br>
+          <a class="artists" href="{{ url_for('main.football', category="artists") }}" style=" font-family :'Caveat', cursive;font-size: 30px;  color: rgb(9, 14, 102);">Artists</a><br>
        
       </div>
     </div>

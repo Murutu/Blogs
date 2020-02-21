@@ -18,12 +18,12 @@ def index():
     print(quotes)
     return render_template('home.html',quotes=quotes)
 
-@main.route('/blog/footballclubs')
-def football():
+@main.route('/blog/<category>')
+def football(category):
     '''
     view root page function that returns index and its data
     '''
-    blogs=Blog.query.filter_by(category='footballclubs').all()
+    blogs=Blog.query.filter_by(category=category).all()
     return render_template('blog.html',blogs=blogs)
 
 @main.route('/blog/new', methods = ['POST', 'GET'])
@@ -86,6 +86,7 @@ def update_pic(uname):
     return redirect(url_for('main.profile',uname=uname))
 
 @main.route('/blog/comment/<int:id>', methods = ['GET','POST'])
+@login_required
 def comment(id):
     blog = Blog.get_blog(id)
     
@@ -98,7 +99,7 @@ def comment(id):
         
         new_comment.save_comment()
         return redirect(url_for("main.comment",id=id))
-    return render_template('comment.html',comment_form,comments=comments)
+    return render_template('comment.html',comment_form=comment_form, comments=comments)
 
 @main.route('/user/<uname>/blogs')
 def user_blogs(uname):

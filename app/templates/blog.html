@@ -9,24 +9,6 @@
 {% endblock %}
 
 {% block content %}
-<!-- <div class="container-1">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="well well-lg">
-                {% for blog in blogs %}
-                <p class="content">{{blog.blog_content}}</p>
-                <p class="posted" >Posted by {{blog.user.username|capitalize}}</p>
-                <a href="/blog/comment/{{blog.id}}">View comments</a>
-                <a href="/blog/{{blog.id}}/delete/" >Delete blog</a>
-              {% endfor %}
-            </div> 
-
-
-
-
-        </div>
-    </div>
-</div> -->
 <div class="container">
     <div class="row">
        {{macro.displayBlog(blogs)}}
